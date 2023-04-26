@@ -3,12 +3,14 @@ import cartReducer from "../reducer/CartItems";
 // import { getDefaultMiddleware } from '@reduxjs/toolkit';
 import { getTotals, getTotalPrice } from '../reducer/CartItems';
 import MyProductReducer from '../reducer/MyProductSlice';
+import myOrderReducer from "../reducer/MyOrderSlice";
 // import MyOfferSlice from "../reducers/myOfferSlice";
 
 const store = configureStore({
   reducer: {
     cart: cartReducer,
-    product: MyProductReducer
+    product: MyProductReducer,
+    order: myOrderReducer
   },
 });
 

@@ -15,12 +15,12 @@ export default function ProductList(props) {
 
     const myProducts = useSelector((state) => state.product);
 
-    console.log(myProducts);
+    // console.log(myProducts);
 
     // let productData = dummyFoodItemData.filter(x => x.product_category === `${id}`);
     let productData = myProducts.filter(x => x.product.product_category === `${id}`);
 
-    console.log(productData);
+    // console.log(productData);
 
     const dispatch = useDispatch();
 

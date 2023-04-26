@@ -63,7 +63,7 @@ export function placeOrder(cart) {
     // console.log(orderList.push(orderProduct));
     console.log(orderItems.push(tempProduct));
   });
-  const orderProduct = { order_id: order_id, seller_id: 'SLRID0001', buyer_id: 'BUYID0001', total_price: total_price, total_gst: 0, discount:0, order_items: orderItems };
+  const orderProduct = { order_id: order_id, seller_id: 'SLRID0001', buyer_id: 'BUYID0001', total_price: total_price, total_gst: 0, discount: 0, order_items: orderItems };
   console.log(orderList.push(orderProduct));
   // console.log('Order Item Id');
   // console.log('Order Item Quantity');
@@ -109,3 +109,17 @@ export function placeOrder(cart) {
 //     })
 // }
 
+export function getOrders() {
+  return axios.get('http://127.0.0.1:8000/buyer_seller/placeorderview/')
+    .then(res => {
+      return res.data
+    })
+}
+
+export function getSeller(userId) {
+  console.log('userId: ', userId);
+  return axios.get(`http://127.0.0.1:8000/buyer_seller/getuser/${userId}`)
+    .then(res => {
+      return res.data
+    })
+}

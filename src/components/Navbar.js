@@ -13,7 +13,7 @@ export default function Navbar(props) {
         <nav className="navbar navbar-expand-lg fixed-top bg-body-tertiary" data-bs-theme={`${props.mode}`}>
             <div className="container">
                 <Link className="navbar-brand" to="/" style={{ fontSize: 20 }}>{props.title}</Link>
-                <form className="d-flex col-md-6" role="search">
+                <form className="d-flex col-md-4" role="search">
                     <input style={{ height: 30 }} className="form-control me-5" type="search" placeholder="Search" aria-label="Search" />
                     {/* <button className="btn btn-outline-success me-3" type="submit">Search</button> */}
                 </form>
@@ -28,6 +28,9 @@ export default function Navbar(props) {
                             </li>
                             <li className="nav-item me-5">
                                 <Link className="nav-link" to="/about" style={{ fontSize: 18 }}>{props.item2}</Link>
+                            </li>
+                            <li className="nav-item me-5">
+                                <Link className="nav-link" to="/myorders" style={{ fontSize: 18 }}>My Orders</Link>
                             </li>
                             <li className="nav-item me-5">
                                 <div className='' style={{ display: 'flex' }}>

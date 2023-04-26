@@ -13,6 +13,8 @@ import store from './action/store/store';
 import { Provider } from 'react-redux';
 import MyCart from './screens/MyCart';
 import Checkout from './screens/Checkout';
+import MyOrder from './screens/MyOrder';
+import MyOrderDetails from './screens/MyOrderDetails';
 
 
 function App() {
@@ -41,13 +43,17 @@ function App() {
             <Route path="/">
               <Route index element={<Home mode={mode} />} />
               <Route path='/productlist'>
-                <Route path="/productlist/:id" element={<ProductList mode={mode}/>} />
+                <Route path="/productlist/:id" element={<ProductList mode={mode} />} />
               </Route>
             </Route>
             <Route path="/about" element={<About />} />
             <Route path="/cart">
-              <Route path="/cart" element={<MyCart mode={mode}/>} />
+              <Route path="/cart" element={<MyCart mode={mode} />} />
               <Route path="/cart/checkout" element={<Checkout />} />
+            </Route>
+            <Route path="/myorders">
+              <Route path="/myorders" element={<MyOrder />} />
+              <Route path="/myorders/:id" element={<MyOrderDetails />} />
             </Route>
           </Routes>
         </Router>
